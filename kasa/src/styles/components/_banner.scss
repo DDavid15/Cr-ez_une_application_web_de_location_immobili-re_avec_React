@@ -1,42 +1,64 @@
 .banner {
   position: relative;
-  width: 90%;
+  width: 100%;
   max-width: 1240px;
   height: clamp(111px, 25vw, 223px);
-  margin: 2rem auto;
+  margin: 0;
   border-radius: 25px;
+  @media (max-width: 768px) {
+    border-radius: 10px;
+  }
   overflow: hidden;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__img {
+    position: absolute;
+    inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    z-index: 0;
   }
 
   &__overlay {
     position: absolute;
-    inset: 0;
-    background-color: #000;
-    opacity: 0.6;
+    width: 1240px;
+    height: 223px;
+
+    opacity: 0.3;
+    border-radius: 25px;
+    @media (max-width: 768px) {
+      border-radius: 10px;
+    }
     mix-blend-mode: darken;
-    border-radius: inherit;
+    background: #000;
   }
 
   &__text {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    position: relative;
+    z-index: 2;
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.5rem, 4vw, 3rem); // de 24px à 48px fluide
-    line-height: 1.4;
+    font-size: clamp(1.5rem, 4vw, 3rem);
     color: #ffffff;
     text-align: center;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    max-width: 70%;
     padding: 0 1rem;
-    max-width: 90%;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+      1px 1px 0 #000;
+
+    @media (max-width: 768px) {
+      text-align: left;
+      padding-left: 1rem;
+      text-shadow: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    justify-content: flex-start;
   }
 }

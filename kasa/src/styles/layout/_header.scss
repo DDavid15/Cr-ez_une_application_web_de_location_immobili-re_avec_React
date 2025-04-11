@@ -2,14 +2,14 @@
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 1.25rem 1rem; // 20px top/bottom, 16px sides
+  padding: 1.25rem 1rem 0; // 20px top/bottom, 16px sides
   display: flex;
   justify-content: space-between;
   align-items: center;
 
   &__logo {
     width: 15%;
-    min-width: 120px;
+    min-width: 145px;
     max-width: 210px;
     height: auto;
   }
@@ -32,13 +32,14 @@
     }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .header__nav {
     gap: 1rem;
     justify-content: flex-end;
 
     a {
       font-size: 0.75rem;
+      text-transform: uppercase;
     }
   }
 }
