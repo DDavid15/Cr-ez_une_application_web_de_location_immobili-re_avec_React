@@ -1,40 +1,58 @@
 .collapse {
-  margin: 20px 0;
+  width: 100%;
+  max-width: 1024px;
   border-radius: 5px;
   overflow: hidden;
 
-  .collapse-header {
+  &__header {
     background-color: #ff6060;
-    color: white;
-    padding: 10px 20px;
-    cursor: pointer;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
 
     h3 {
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(13px, 2vw, 24px);
+      font-weight: 700;
       margin: 0;
-      font-size: 18px;
     }
 
     .arrow {
       font-size: 24px;
+      transform: rotate(-90deg);
       transition: transform 0.3s ease;
 
-      &.up {
-        transform: rotate(180deg);
-      }
-
-      &.down {
-        transform: rotate(0deg);
+      &.rotate {
+        transform: rotate(90deg);
       }
     }
   }
 
-  .collapse-content {
+  &__content-wrapper {
+    transition: max-height 0.3s ease;
     background-color: rgba(247, 247, 247, 0.45);
-    color: #000;
-    font-size: 14px;
+    border-radius: 0 0 5px 5px;
+  }
+
+  &__content {
     padding: 20px;
+    font-family: "Montserrat", sans-serif;
+    font-size: clamp(12px, 1.5vw, 18px);
+    color: #000;
+    line-height: 1.5;
+  }
+}
+.collapse__icon {
+  width: 32px;
+  height: 32px;
+  transition: transform 0.3s ease;
+  transform: rotate(-0deg);
+
+  &.rotate {
+    transform: rotate(180deg);
   }
 }

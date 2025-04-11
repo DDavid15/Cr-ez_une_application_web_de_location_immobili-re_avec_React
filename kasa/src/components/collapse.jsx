@@ -1,16 +1,25 @@
 import { useState } from "react";
 import "../styles/components/_collapse.scss";
+import arrowIcon from "../assets/arrow-back-ios.svg";
 
 function Collapse({ title, children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className={`collapse ${isOpen ? "open" : ""}`}>
-      <div className="collapse-header" onClick={() => setIsOpen(!isOpen)}>
+    <div className={`collapse ${isOpen ? "open" : "closed"}`}>
+      <div className="collapse__header" onClick={() => setIsOpen(!isOpen)}>
         <h3>{title}</h3>
-        <span className={`arrow ${isOpen ? "up" : "down"}`}>⌃</span>
+        <img
+          src={arrowIcon}
+          alt="Icône flèche"
+          className={`collapse__icon ${isOpen ? "rotate" : ""}`}
+        />
       </div>
-      {isOpen && <div className="collapse-content">{children}</div>}
+      {isOpen && (
+        <div className="collapse__content-wrapper">
+          <div className="collapse__content">{children}</div>
+        </div>
+      )}
     </div>
   );
 }

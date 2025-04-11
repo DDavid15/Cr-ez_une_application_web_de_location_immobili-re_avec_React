@@ -21,14 +21,14 @@ function Home() {
   }, []);
 
   return (
-    <div className="home">
+    <>
       <Banner image={bannerHome} title="Chez vous, partout et ailleurs" />
       <section className="gallery">
         {displayedCards.map((logement) => (
           <Card key={logement.id} logement={logement} />
         ))}
       </section>
-    </div>
+    </>
   );
 }
 
