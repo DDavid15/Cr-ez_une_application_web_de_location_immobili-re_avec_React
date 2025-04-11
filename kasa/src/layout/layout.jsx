@@ -1,12 +1,24 @@
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
+import Header from "../components/header";
+import Footer from "../components/footer";
 
-function Layout({ children }) {
+function Layout() {
+  const location = useLocation();
+  const path = location.pathname;
+
+  let mainClass = "main";
+
+  if (path === "/") mainClass = "home";
+  else if (path === "/a-propos") mainClass = "apropos";
+  else if (path.startsWith("/logement/")) mainClass = "logement";
+  else mainClass = "default";
+
   return (
     <>
       <Header />
-      <main>{children || <Outlet />}</main>
+      <main className={mainClass}>
+        <Outlet /> {/* ← C'est ce qui permet d'afficher tes pages */}
+      </main>
       <Footer />
     </>
   );

@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Layout from "./layout/Layout";
+import Layout from "./layout/layout";
+
 import Home from "./pages/Home";
 import Logement from "./pages/Logement";
 import APropos from "./pages/APropos";
@@ -7,14 +8,14 @@ import NotFound from "./pages/NotFound";
 
 function App() {
   return (
-    <Layout>
-      <Routes>
+    <Routes>
+      <Route element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/logement/:id" element={<Logement />} />
         <Route path="/a-propos" element={<APropos />} />
+        <Route path="/logement/:id" element={<Logement />} />
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </Layout>
+      </Route>
+    </Routes>
   );
 }
 

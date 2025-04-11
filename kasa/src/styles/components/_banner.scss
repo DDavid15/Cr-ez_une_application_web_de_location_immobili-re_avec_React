@@ -4,9 +4,9 @@
   max-width: 1240px;
   height: clamp(111px, 25vw, 223px);
   margin: 2rem auto;
-  border-radius: 1.5rem;
+  border-radius: 25px;
   overflow: hidden;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 
   &__img {
     width: 100%;
@@ -19,8 +19,8 @@
     position: absolute;
     inset: 0;
     background-color: #000;
-    mix-blend-mode: darken;
     opacity: 0.6;
+    mix-blend-mode: darken;
     border-radius: inherit;
   }
 
@@ -31,12 +31,12 @@
     transform: translate(-50%, -50%);
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    font-size: clamp(1.25rem, 3vw, 3rem); // 20px à 48px fluide
+    font-size: clamp(1.5rem, 4vw, 3rem); // de 24px à 48px fluide
+    line-height: 1.4;
     color: #ffffff;
     text-align: center;
     text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
     padding: 0 1rem;
-    line-height: 1.2;
-    max-width: 80%;
+    max-width: 90%;
   }
 }
