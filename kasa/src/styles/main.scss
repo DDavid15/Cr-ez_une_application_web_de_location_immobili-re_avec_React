@@ -11,10 +11,13 @@
 @import "components/card";
 @import "components/collapse";
 @import "components/carousel";
+@import "components/rating";
+@import "components/tag";
 
 // Layout
 @import "layout/header";
 @import "layout/footer";
+@import "layout/layout";
 
 // Pages
 @import "pages/home";

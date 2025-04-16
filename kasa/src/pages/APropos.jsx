@@ -1,8 +1,7 @@
-import Banner from "../components/banner";
-import Collapse from "../components/collapse";
+import Banner from "../components/Banner";
+import Collapse from "../components/Collapse";
 
 import bannerApropos from "../assets/banner-apropos.svg";
-import "../styles/pages/_a-propos.scss";
 
 function APropos() {
   return (

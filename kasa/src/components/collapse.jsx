@@ -1,5 +1,4 @@
 import { useState } from "react";
-//import "../styles/components/_collapse.scss";
 import arrowIcon from "../assets/arrow-back-ios.svg";
 
 function Collapse({ title, children }) {

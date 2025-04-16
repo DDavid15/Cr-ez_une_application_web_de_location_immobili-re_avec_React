@@ -1,6 +1,5 @@
 import fullStar from "../assets/star-full.svg";
 import emptyStar from "../assets/star-empty.svg";
-import "../styles/components/_rating.scss";
 
 function Rating({ value }) {
   const stars = [];

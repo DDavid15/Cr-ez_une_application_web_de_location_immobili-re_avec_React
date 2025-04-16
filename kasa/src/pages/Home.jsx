@@ -1,7 +1,7 @@
 import Banner from "../components/banner";
 import bannerHome from "../assets/banner-home.svg";
-import Card from "../components/card";
-import logements from "../data/logements.json";
+import Card from "../components/Card";
+import logements from "../data/Logements.json";
 
 function Home() {
   return (
