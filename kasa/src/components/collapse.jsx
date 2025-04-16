@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/components/_collapse.scss";
+//import "../styles/components/_collapse.scss";
 import arrowIcon from "../assets/arrow-back-ios.svg";
 
 function Collapse({ title, children }) {
@@ -15,11 +15,10 @@ function Collapse({ title, children }) {
           className={`collapse__icon ${isOpen ? "rotate" : ""}`}
         />
       </div>
-      {isOpen && (
-        <div className="collapse__content-wrapper">
-          <div className="collapse__content">{children}</div>
-        </div>
-      )}
+
+      <div className={`collapse__content-wrapper ${isOpen ? "open" : ""}`}>
+        <div className="collapse__content">{children}</div>
+      </div>
     </div>
   );
 }

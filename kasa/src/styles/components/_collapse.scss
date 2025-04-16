@@ -1,66 +1,89 @@
 .collapse {
   width: 100%;
-  max-width: 1024px;
+  max-width: 582px;
   border-radius: 5px;
   overflow: hidden;
 
   &__header {
-    background-color: #ff6060;
-    color: #fff;
-    padding: 5px 15px;
-    @media (max-width: 768px) {
-      padding: 0px 10px;
-    }
-    border-radius: 5px;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px 10px 10px;
+    background-color: #ff6060;
+    border-radius: 5px;
     cursor: pointer;
+    z-index: 1;
+    position: relative;
 
     h3 {
       font-family: "Montserrat", sans-serif;
-      font-size: clamp(13px, 2vw, 24px);
+      font-size: 18px;
       font-weight: 700;
+      color: #fff;
       margin: 0;
+      flex-grow: 1;
     }
 
-    .arrow {
-      font-size: 24px;
-      transform: rotate(-90deg);
+    .collapse__icon {
+      width: 32px;
+      height: 32px;
       transition: transform 0.3s ease;
+      transform: rotate(0deg);
 
       &.rotate {
-        transform: rotate(90deg);
+        transform: rotate(180deg);
       }
     }
   }
 
   &__content-wrapper {
-    transition: max-height 0.3s ease;
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
     background-color: rgba(247, 247, 247, 0.45);
     border-radius: 0 0 5px 5px;
+    transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+  }
+
+  &__content-wrapper.open {
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
   }
 
   &__content {
     padding: 20px;
     font-family: "Montserrat", sans-serif;
-    font-size: clamp(12px, 1.5vw, 18px);
+    font-size: clamp(14px, 1.5vw, 18px);
     color: #000;
     line-height: 1.5;
-    overflow: hidden;
-    transition: max-height 0.4s ease-in-out;
+
+    li {
+      list-style: none;
+      padding: 2px 0;
+    }
+
     &--open {
       max-height: 500px;
     }
   }
-}
-.collapse__icon {
-  width: 32px;
-  height: 32px;
-  transition: transform 0.3s ease;
-  transform: rotate(-0deg);
 
-  &.rotate {
-    transform: rotate(180deg);
+  @media (max-width: 768px) {
+    max-width: 100%;
+
+    &__header {
+      padding: 10px;
+
+      h3 {
+        font-size: 16px;
+      }
+    }
+
+    &__content {
+      font-size: 14px;
+      padding: 10px;
+    }
   }
 }

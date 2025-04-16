@@ -4,7 +4,9 @@ import logo from "../assets/logo-header.svg"; // à adapter selon le nom de ton 
 function Header() {
   return (
     <header className="header">
-      <img src={logo} alt="Kasa" className="header__logo" />
+      <NavLink to="/">
+        <img src={logo} alt="Kasa" className="header__logo" />
+      </NavLink>
       <nav className="header__nav">
         <NavLink
           to="/"
