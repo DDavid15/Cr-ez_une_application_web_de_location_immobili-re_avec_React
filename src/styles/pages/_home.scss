@@ -1,19 +1,22 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
 .home {
   .gallery {
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-    max-width: 1240px;
+    gap: $spacing-lg;
+    max-width: $max-container-width;
     width: 100%;
-    padding: 2rem;
-    background: #f7f7f7;
-    border-radius: 1.5rem;
+    padding: $spacing-lg;
+    background: $background-color;
+    border-radius: $border-radius-lg;
 
-    @media (max-width: 768px) {
+    @include respond-to($breakpoint-mobile) {
       grid-template-columns: 1fr;
-      gap: 1.5rem;
       padding: 0;
+      background: none;
     }
   }
 }

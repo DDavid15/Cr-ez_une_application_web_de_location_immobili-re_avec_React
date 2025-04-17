@@ -1,104 +1,60 @@
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 1240px;
-  height: 415px;
-  border-radius: 25px;
+  max-width: $max-container-width;
+  border-radius: $border-radius-lg;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include flex-center;
 
-  // Image principale
+  @media (max-width: 768px) {
+    border-radius: $border-radius-md;
+  }
+
   &__image {
+    max-height: 415px;
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     border-radius: inherit;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 0;
   }
 
-  // Overlay noir semi-transparent
-  &__overlay {
+  &__arrow {
     position: absolute;
-    inset: 0;
-    background-color: rgba(0, 0, 0, 0.3);
-    mix-blend-mode: darken;
-    border-radius: inherit;
-    z-index: 1;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    width: 96px;
+    height: 119px;
+    z-index: 2;
+    background: none;
+    border: none;
+
+    @media (max-width: 768px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--left {
+      left: 0;
+      transform: translateY(-50%) rotate(180deg);
+    }
+
+    &--right {
+      right: 0;
+    }
   }
 
-  // Compteur (ex : 1/5)
   &__counter {
     position: absolute;
     bottom: 1rem;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 2;
+    color: $text-light-color;
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
 
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #fff;
-  }
-
-  // Flèches de navigation
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 2;
-    width: 96px;
-    height: 119px;
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    &--left {
-      left: 0rem;
-
-      img {
-        transform: scaleX(-1);
-        display: block;
-        margin: 0 auto;
-      }
-    }
-
-    &--right {
-      right: 0rem;
-    }
-  }
-
-  // Responsive mobile
-  @media (max-width: 768px) {
-    height: 255px;
-    border-radius: 10px;
-
-    &__counter {
+    @media (max-width: 768px) {
       display: none;
-    }
-
-    &__arrow {
-      width: 24px;
-      height: 80px;
-
-      &--left {
-        left: 0rem;
-      }
-
-      &--right {
-        right: 0rem;
-      }
     }
   }
 }

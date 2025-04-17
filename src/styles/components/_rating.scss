@@ -1,12 +1,12 @@
 .rating {
   display: flex;
-  gap: 0.5rem;
+  gap: $spacing-xs;
 
   &__star {
     width: 24px;
     height: 24px;
 
-    @media (max-width: 768px) {
+    @include respond-to($breakpoint-mobile) {
       width: 18px;
       height: 18px;
     }

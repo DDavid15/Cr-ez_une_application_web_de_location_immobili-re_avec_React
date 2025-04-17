@@ -1,21 +1,32 @@
-@mixin flexCenter {
+// _mixins.scss (optimisé)
+
+// Centre complètement un élément avec Flexbox
+@mixin flex-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-@mixin responsive($breakpoint) {
-  @if $breakpoint == sm {
-    @media (max-width: $breakpoint-sm) {
-      @content;
-    }
-  } @else if $breakpoint == md {
-    @media (max-width: $breakpoint-md) {
-      @content;
-    }
-  } @else if $breakpoint == lg {
-    @media (max-width: $breakpoint-lg) {
-      @content;
-    }
+// Responsive simplifié
+@mixin respond-to($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
   }
+}
+
+// Ajout d'un mixin pour la transition standard
+@mixin transition($properties...) {
+  transition: $properties 0.3s ease;
+}
+
+// Cache le texte mais accessible aux lecteurs d'écran
+@mixin visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }

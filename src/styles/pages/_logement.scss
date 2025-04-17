@@ -1,37 +1,52 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
 .logement {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  max-width: 1240px;
+  gap: $spacing-sm;
+  max-width: $max-container-width;
   width: 100%;
-  padding: 2rem 1rem;
+  padding: $spacing-lg $spacing-sm;
 
   &__header {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: $spacing-sm;
     width: 100%;
+
+    @include respond-to($breakpoint-mobile) {
+      flex-direction: column;
+    }
   }
 
   &__infos {
     flex: 1 1 60%;
 
     .logement__title {
-      font-family: "Montserrat", sans-serif;
+      font-family: $font-family;
       font-size: 36px;
-      font-weight: 500;
+      font-weight: $font-weight-regular;
       line-height: 142.6%;
-      color: #ff6060;
+      color: $primary-color;
       margin-bottom: 0.3rem;
+
+      @include respond-to($breakpoint-mobile) {
+        font-size: 18px;
+      }
     }
 
     .logement__location {
-      font-family: "Montserrat", sans-serif;
+      font-family: $font-family;
       font-size: 18px;
-      font-weight: 500;
-      color: #000;
+      font-weight: $font-weight-regular;
+      color: $text-color;
       margin-bottom: 1rem;
+
+      @include respond-to($breakpoint-mobile) {
+        font-size: 14px;
+      }
     }
 
     .logement__tags {
@@ -40,7 +55,7 @@
       gap: 0.5rem;
 
       .tag {
-        @media (max-width: 768px) {
+        @include respond-to($breakpoint-mobile) {
           height: 18px;
           font-size: 10px;
         }
@@ -53,22 +68,29 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
-    gap: 1rem;
+    gap: $spacing-xs;
+
+    @include respond-to($breakpoint-mobile) {
+      flex-direction: row-reverse;
+      justify-content: space-between;
+      align-items: center;
+    }
 
     .logement__host {
       display: flex;
       align-items: center;
-      gap: 0.5rem;
       justify-content: flex-end;
+      gap: 0.5rem;
 
       &-name {
-        font-family: "Montserrat", sans-serif;
+        font-family: $font-family;
         font-size: 18px;
-        font-weight: 500;
-        color: #ff6060;
+        font-weight: $font-weight-regular;
+        color: $primary-color;
         text-align: right;
+        margin: 0;
 
-        @media (max-width: 768px) {
+        @include respond-to($breakpoint-mobile) {
           font-size: 12px;
           width: 50%;
         }
@@ -81,7 +103,7 @@
         object-fit: cover;
         background: #c4c4c4;
 
-        @media (max-width: 768px) {
+        @include respond-to($breakpoint-mobile) {
           width: 32px;
           height: 32px;
         }
@@ -92,40 +114,16 @@
   &__collapses {
     display: flex;
     justify-content: space-between;
-    gap: 2rem;
+    gap: $spacing-lg;
     width: 100%;
-
-    .collapse__header {
-      max-width: 582px;
-    }
 
     > * {
       flex: 1;
     }
 
-    @media (max-width: 768px) {
+    @include respond-to($breakpoint-mobile) {
       flex-direction: column;
-      gap: 1rem;
-    }
-  }
-
-  @media (max-width: 768px) {
-    &__header {
-      flex-direction: column;
-    }
-
-    &__host-rating {
-      flex-direction: row-reverse;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logement__title {
-      font-size: 18px;
-    }
-
-    .logement__location {
-      font-size: 14px;
+      gap: $spacing-sm;
     }
   }
 }

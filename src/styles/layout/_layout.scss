@@ -1,9 +1,12 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
 .page {
-  max-width: 1440px;
+  max-width: $max-layout-width;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: $spacing-lg $spacing-sm;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: $spacing-md;
   align-items: center;
 }

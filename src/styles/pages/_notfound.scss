@@ -1,29 +1,35 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
 .notfound {
-  font-family: "Montserrat", sans-serif;
-  gap: 6rem;
-  padding: 6rem 1rem;
+  font-family: $font-family;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: $spacing-xl;
+  padding: $spacing-xl $spacing-sm;
 
   &__code {
-    font-weight: 700;
+    font-weight: $font-weight-bold;
     font-size: clamp(4rem, 20vw, 18rem); // 64px → 288px
     line-height: 1.2;
-    color: #ff6060;
+    color: $primary-color;
   }
 
   &__message {
     max-width: 872px;
-    font-weight: 500;
+    font-weight: $font-weight-regular;
     font-size: clamp(1.25rem, 3vw, 2.25rem); // 20px → 36px
-    color: #ff6060;
+    color: $primary-color;
     text-align: center;
     width: 75%;
   }
 
   &__link {
-    font-weight: 500;
+    font-weight: $font-weight-regular;
     font-size: clamp(1rem, 1.5vw, 1.125rem); // 16px → 18px
     text-decoration: underline;
-    color: #000;
-    margin-top: 1rem;
+    color: $text-color;
+    margin-top: $spacing-sm;
   }
 }

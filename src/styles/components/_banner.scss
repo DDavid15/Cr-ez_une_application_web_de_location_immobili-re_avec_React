@@ -1,15 +1,19 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
 .banner {
   position: relative;
   width: 100%;
-  max-width: 1240px;
+  max-width: $max-container-width;
   height: clamp(111px, 25vw, 223px);
   margin: 0;
-  border-radius: 25px;
-  @media (max-width: 768px) {
-    border-radius: 10px;
-  }
-  overflow: hidden;
+  border-radius: $border-radius-lg;
 
+  @include respond-to($breakpoint-mobile) {
+    border-radius: $border-radius-md;
+  }
+
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -25,14 +29,15 @@
 
   &__overlay {
     position: absolute;
-    width: 1240px;
+    width: $max-container-width;
     height: 223px;
-
     opacity: 0.3;
-    border-radius: 25px;
-    @media (max-width: 768px) {
-      border-radius: 10px;
+    border-radius: $border-radius-lg;
+
+    @include respond-to($breakpoint-mobile) {
+      border-radius: $border-radius-md;
     }
+
     mix-blend-mode: darken;
     background: #000;
   }
@@ -40,25 +45,24 @@
   &__text {
     position: relative;
     z-index: 2;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-family: $font-family;
+    font-weight: $font-weight-bold;
     font-size: clamp(1.5rem, 4vw, 3rem);
-    color: #ffffff;
+    color: $text-light-color;
     text-align: center;
-    text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    max-width: 70%;
-    padding: 0 1rem;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
       1px 1px 0 #000;
+    max-width: 70%;
+    padding: 0 $spacing-sm;
 
-    @media (max-width: 768px) {
+    @include respond-to($breakpoint-mobile) {
       text-align: left;
-      padding-left: 1rem;
+      padding-left: $spacing-sm;
       text-shadow: none;
     }
   }
 
-  @media (max-width: 768px) {
+  @include respond-to($breakpoint-mobile) {
     justify-content: flex-start;
   }
 }

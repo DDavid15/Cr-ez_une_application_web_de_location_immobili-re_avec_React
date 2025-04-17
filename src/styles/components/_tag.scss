@@ -1,11 +1,11 @@
 .tag {
-  background-color: #ff6060;
-  color: white;
+  background-color: $primary-color;
+  color: $text-light-color;
   font-size: 14px;
-  font-weight: 700;
-  font-family: "Montserrat", sans-serif;
+  font-weight: $font-weight-bold;
+  font-family: $font-family;
   padding: 0.25rem 1rem;
-  border-radius: 10px;
+  border-radius: $border-radius-md;
   height: 25px;
   display: inline-flex;
   align-items: center;

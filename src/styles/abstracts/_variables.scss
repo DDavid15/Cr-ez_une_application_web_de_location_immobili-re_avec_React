@@ -1,8 +1,33 @@
-// _variables.scss
+// Couleurs générales
 $primary-color: #ff6060;
+$text-color: #000;
+$text-light-color: #fff;
+$background-color: #f7f7f7;
+$footer-bg-color: #000;
+
+// Typographie
 $font-family: "Montserrat", sans-serif;
+$font-size-base: 16px;
+$font-weight-regular: 500;
+$font-weight-bold: 700;
+
+// Espacements standards (marges, paddings, gaps)
+$spacing-xs: 0.5rem; // 8px
+$spacing-sm: 1rem; // 16px
+$spacing-md: 1.5rem; // 24px
+$spacing-lg: 2rem; // 32px
+$spacing-xl: 4rem; // 64px
+
+// Dimensions spécifiques
 $gap-between-cards: 20px;
 $banner-height: 200px;
+$carousel-height: 415px;
+$max-container-width: 1240px;
+$max-layout-width: 1440px;
+$border-radius-sm: 5px;
+$border-radius-md: 10px;
+$border-radius-lg: 25px;
 
+// Breakpoints responsives
 $breakpoint-tablet: 1024px;
 $breakpoint-mobile: 768px;

@@ -1,8 +1,11 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
 .footer {
-  max-width: 1440px;
   width: 100%;
-  background-color: #000000;
-  padding: 2rem 1rem 2rem 1rem;
+  max-width: $max-layout-width;
+  background-color: $footer-bg-color;
+  padding: $spacing-lg $spacing-sm;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -11,25 +14,22 @@
 
   &__logo {
     max-width: 122px;
-    min-width: 100px;
     height: auto;
-    margin: 2rem;
+    margin: $spacing-lg;
 
-    @media (max-width: 768px) {
-      margin: 1rem;
+    @include respond-to($breakpoint-mobile) {
+      margin: $spacing-sm;
     }
   }
 
   &__text {
-    font-family: "Montserrat", sans-serif;
-    font-size: clamp(0.75rem, 1.8vw, 1.5rem); // 12px à 24px fluide
-    font-weight: 500;
-    color: #ffffff;
-    line-height: 1.4;
-    max-width: 90%;
+    color: $text-light-color;
+    font-family: $font-family;
+    font-size: 24px;
 
-    @media (max-width: 768px) {
-      max-width: 30%;
+    @include respond-to($breakpoint-mobile) {
+      font-size: 12px;
+      width: 30%;
     }
   }
 }
