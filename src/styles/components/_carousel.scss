@@ -16,6 +16,10 @@
     height: auto;
     object-fit: cover;
     border-radius: inherit;
+
+    @media (max-width: 768px) {
+      height: 255px;
+    }
   }
 
   &__arrow {
