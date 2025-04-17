@@ -64,7 +64,7 @@
 
   @include respond-to($breakpoint-mobile) {
     max-width: none;
-    max-height: 255px;
+    min-height: 255px;
     aspect-ratio: unset;
     width: 100%;
   }
