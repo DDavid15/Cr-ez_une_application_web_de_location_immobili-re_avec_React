@@ -1,4 +1,4 @@
-import Banner from "../components/banner";
+import Banner from "../components/Banner";
 import bannerHome from "../assets/banner-home.svg";
 import Card from "../components/Card";
 import logements from "../data/Logements.json";

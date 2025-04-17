@@ -1,4 +1,3 @@
-// src/components/Carousel.jsx
 import { useState } from "react";
 import Arrow from "../assets/arrow-forward-ios.svg";
 
