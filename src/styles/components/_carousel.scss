@@ -65,7 +65,7 @@
     }
 
     &--left {
-      left: 1rem;
+      left: 0rem;
 
       img {
         transform: scaleX(-1);
@@ -75,7 +75,7 @@
     }
 
     &--right {
-      right: 1rem;
+      right: 0rem;
     }
   }
 
@@ -85,20 +85,19 @@
     border-radius: 10px;
 
     &__counter {
-      font-size: 0.875rem;
-      bottom: 0.5rem;
+      display: none;
     }
 
     &__arrow {
-      width: 46px;
+      width: 24px;
       height: 80px;
 
       &--left {
-        left: 0.5rem;
+        left: 0rem;
       }
 
       &--right {
-        right: 0.5rem;
+        right: 0rem;
       }
     }
   }
